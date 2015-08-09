@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular - New Routing</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet" />
+		
+		<script src="./node_modules/angular/angular.min.js"></script>
+		<script src="./node_modules/angular-new-router/dist/router.es5.js"></script>
+		
+		<script src="./js/app.js"></script>
+		<script src="./js/components/home/HomeController.js"></script>
+		<script src="./js/components/first/FirstController.js"></script>
+		<script src="./js/components/detail/DetailController.js"></script>
+	</head>
+	<body ng-app="app" ng-controller="RouteController as route">
+		<div class="container">
+			
+			<div class="header clearfix">
+				<nav ng-controller="MenuController as menu">
+					<ul class="nav nav-pills pull-right">
+						<li role="presentation"><a ng-link="home">Home</a></li>
+						<li role="presentation"><a ng-link="first">First</a></li>
+						<li role="presentation"><a ng-link="detail({ uData: menu.detailID })">Details</a></li>
+					</ul>
+				</nav>
+				<h3 class="text-muted">Angular - New Routing</h3>
+			</div>
+			
+			<ng-viewport></ng-viewport>
+		</div>
+	</body>
+</html>
